@@ -13,7 +13,9 @@ const int echoPin(4);
 #define potS 6
 
 // Potencia quando o robo anda para frente
-#define potF 255
+#define potF 125
+
+#define potH 255
 
 #include <Servo.h>
 
@@ -37,27 +39,22 @@ void loop()
 {
 //  myservo2.write(40);
 //  myservo1.write(90);
-  if(dist() <= 12)
+  if(dist() <= 20)
   {
-    l = 1;
-    while(l == 1)
-    {
-      control('p');
-      delay(200);
-      control('d');
-      delay(200);
-      control('w');
-      delay(200);
-      control('d');
-      delay(200);
-      control('w');
-      delay(200);
-      l = 0;
-    }
+    control('p');
+    delay(1000);
+    control('w');
+    delay(500);
+    control('p');
+    delay(1000);
+    control('d');
+    delay(500);
+    control('p');
+    delay(1000);
   }
   else
   {
-    control('w');
+    control('x');
   }
   int dado = Serial.read();
   if(dado  == '5' )
@@ -71,6 +68,10 @@ void loop()
      {
       Serial.println("frente");
       control('w');
+     }
+     else if(dado == '5')
+     {
+      i=0;
      }
      else if(dado == '2')
      { 

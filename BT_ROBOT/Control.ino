@@ -6,7 +6,7 @@ void control(char dir){
            analogWrite(m1A_pin, 0);
            analogWrite(m1B_pin, potF);
            analogWrite(m2A_pin, 0);
-           analogWrite(m2B_pin, potF);
+           analogWrite(m2B_pin, potH);
            break;
               
        //Anda para tras   
@@ -22,7 +22,7 @@ void control(char dir){
            analogWrite(m1A_pin, potS);
            analogWrite(m1B_pin, 0);
            analogWrite(m2A_pin, 0);
-           analogWrite(m2B_pin, potF);
+           analogWrite(m2B_pin, potH);
            break;
               
        //Anda para esquerda
